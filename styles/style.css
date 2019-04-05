@@ -123,4 +123,7 @@ input {
   height: 100%;
   z-index: -1; }
 
+.is-matched {
+  background: tomato; }
+
 /*# sourceMappingURL=style.css.map */

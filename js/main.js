@@ -20,7 +20,9 @@ var time = 20;
 function start() {
   startCount();
   showWord(jungle);
-  inputWord.addEventListener("input", startMatch);
+  inputWord.addEventListener("input", start_countdown);
+  document.addEventListener('keyup', checkKeyPress);
+
 }
 
 btnStart.onclick = start;
@@ -54,6 +56,56 @@ function showWord(words) {
     currentWord.appendChild(span);
   }
 }
+
+// Change BG 
+function checkKeyPress(ev) {
+  // console.log(ev)
+  const wordLetters = document.querySelectorAll('#current_word .letter-pressed');
+  let wordToCheck = getLetter();
+  // console.log(wordToCheck)
+  // console.log(wordToCheck, wordInput.value.length)
+  for (let i = 0; i < inputWord.value.length; i++) {
+    // console.log(i)
+    if (wordToCheck[i] == inputWord.value[i]) {
+      wordLetters[i].classList.add("is-matched")
+      // console.log(wordToCheck[i]);
+    }
+
+  }
+  if (ev.key === "Backspace") {
+    // console.log('delete letter');
+    if (inputWord.value.length >= 0) {
+      const els = document.querySelectorAll(".is-matched");
+      els[els.length - 1].classList.remove("is-matched")
+    }
+  }
+}
+
+function getLetter() {
+  const wordLetters = document.querySelectorAll('#current_word .letter-pressed');
+  let arr = []
+  for (let i = 0; i < wordLetters.length; i++) {
+    arr.push(wordLetters[i].textContent);
+    // console.log(i);
+  }
+  return arr
+};
+
+
+function start_countdown(){
+  var reverse_counter = 10;
+var downloadTimer = setInterval(function(){
+document.getElementById("pbar").value = 10 - --reverse_counter;
+if(reverse_counter <= 0)
+  clearInterval(downloadTimer);
+
+document.getElementById("counting").innerHTML= reverse_counter;
+
+},1000);
+}
+
+
+
 
 // function showWordsLeft(){
 // let wordsession = jungle;
