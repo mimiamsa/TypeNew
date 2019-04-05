@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+
+#current_typing {
+  display: flex;
+  font-weight: 700;
+  font-size: 2.4rem;
+  padding: 16px;
+}
+
+input {
+  border: none;
+  background-image: none;
+  background-color: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: black
+  }
+}
+
+#bigwrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+#granim-bg {
+  width: 100%;
+  height: 100vh;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 20% 60% 20%;
+  height: 100vh;
+
+
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0
+  }
+
+  h1 {
+    font-size: 9rem;
+  }
+
+
+  // .item {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+
+
+  .item:nth-child(1) {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+  }
+
+  .item:nth-child(3) {
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+  }
+
+  .item:nth-child(1),
+  .item:nth-child(3) {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    #score,
+    #words_left {
+
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 1;
+
+      .game-infos {
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+
+    }
+  }
+
+  .item:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding: 35px 250px 0px 250px;
+
+    #progressBar {
+      position: relative;
+      width: 100%;
+      height: 18px;
+      background-color: white;
+    }
+
+    #barStatus {
+      position: absolute;
+      width: 1%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #btn-start {
+      font-weight: 700;
+      background-color: white;
+      padding: 15px;
+      max-width: 100px;
+      margin-bottom: 20px;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+        color:white;
+        background: black;
+      }
+    }
+
+  }
+
+  .item:nth-child(4) {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .item:nth-child(5) {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+#granim-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

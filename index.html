@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./node_modules/granim/dist/granim.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>Type it</title>
+</head>
+
+<body>
+  <div id="bigwrapper">
+    <canvas id="granim-bg"></canvas>
+    <div id="grid-container">
+      <div class="item">
+        <div id="words_left"><h3>00</h3><div class="game-infos">left</div></div>
+      </div>
+      <div class="item">
+          <div id="btn-start">START</div>
+        <div id="progressBar">
+          <div id="barStatus"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div id="score"><h3>00</h3><div class="game-infos">points</div></div>
+      </div>
+      <div class="item">
+        <h1 id="current_word"></h1>
+      </div>
+      <div class="item">
+        <input type="text" placeholder="Type" id="current_typing">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
