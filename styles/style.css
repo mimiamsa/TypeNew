@@ -126,4 +126,13 @@ input {
 .is-matched {
   background: tomato; }
 
+progress[value]::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 2px; }
+
+progress {
+  border: 0;
+  height: 18px;
+  border-radius: 100px; }
+
 /*# sourceMappingURL=style.css.map */
